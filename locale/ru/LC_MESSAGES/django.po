@@ -1,0 +1,3 @@
+msgid "Email address:"
+msgstr "Адрес электронной почты:"
+
