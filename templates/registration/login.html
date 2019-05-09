@@ -8,6 +8,7 @@
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card card-signin my-5">
                     <div class="card-body">
+
                         <h5 class="card-title text-center">Вход</h5>
                         <form class="form-signin" method="post">
                             {% csrf_token %}
@@ -27,18 +28,20 @@
                                 <label for="inputPassword">Пароль</label>
 
                             </div>
-                            {% if form.errors %}
-
-                                <p>Неправильный логин или пароль</p>
-                            {% endif %}
+                            {% for field, errors in form.errors.items %}
+                                {% for error in errors %}
+                                    <p style="color: #840a10">{{ error }}</p>
+                                {% endfor %}
+                            {% endfor %}
 
                             <button class="btn btn-lg btn-dark btn-block text-uppercase" type="submit">Войти
                             </button>
                             <hr class="my-4">
-                            <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i
-                                    class="fab fa-google mr-2"></i> Зарегистироваться
-                            </button>
-
+                            <a href="{% url 'main:registration' %}">
+                                <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i
+                                        class="fab fa-google mr-2"></i> Зарегистироваться
+                                </button>
+                            </a>
                         </form>
                     </div>
                 </div>

@@ -1,0 +1,57 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+{% load widget_tweaks %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Регистрация</h5>
+
+                        <form class="form-signin" method="post" action="{% url 'main:registration' %}">
+                            {% csrf_token %}
+                            <div class="form-label-group">
+
+                                <input type="text" name="username" maxlength="150" autofocus required id="id_username"
+                                       placeholder="Логин" class="form-control">
+                                <label for="id_username">Логин</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                <input type="password" name="password1" required id="id_password1" class="form-control"
+                                       placeholder="Пароль">
+                                <label for="id_password1">Пароль</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                <input type="password" name="password2" required id="id_password2" class="form-control"
+                                       placeholder="Повторите пароль">
+                                <label for="id_password2">Повторите пароль</label>
+                            </div>
+
+                            {% for field, errors in form.errors.items %}
+                                {% for error in errors %}
+                                    <p style="color: #840a10">{{ error }}</p>
+                                {% endfor %}
+                            {% endfor %}
+
+                            <button class="btn btn-lg btn-dark btn-block text-uppercase" type="submit">
+                                Зарегистрироваться
+                            </button>
+                            <hr class="my-4">
+                            <a href="{% url 'main:login' %}">
+                                <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i
+                                        class="fab fa-google mr-2"></i> Уже есть аккаунт
+                                </button>
+                            </a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
