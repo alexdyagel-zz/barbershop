@@ -4,18 +4,7 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-{#    {% if user.is_authenticated %}#}
         <p><a href="{% url 'main:logout' %}">
             <button class="btn btn-success">logout</button>
         </a></p>
-{#    {% else %}#}
-{#        <div class="justify-content-center">#}
-{#            <div class="col-10">#}
-{#                <p>You are not logged in</p>#}
-{#                <a href="{% url 'main:login' %}">#}
-{#                    <button class="btn btn-success">login</button>#}
-{#                </a>#}
-{#            </div>#}
-{#        </div>#}
-{#    {% endif %}#}
 {% endblock %}

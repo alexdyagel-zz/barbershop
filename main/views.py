@@ -9,7 +9,7 @@ from main.forms import RegistrationForm
 
 def index(request):
     if request.user.is_authenticated:
-        return render(request, 'main/home.html')
+        return render(request, 'main/barbershop.html')
     else:
         return redirect(reverse('main:login'))
 

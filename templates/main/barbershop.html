@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <title>Alex Barbershop</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/ionicons/css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header role="banner">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="barbershop.html">Alex</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+                    aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
+                <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Онлайн-запись</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'main:logout' %}">Выход</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- END header -->
+
+<section class="site-hero overlay" data-stellar-background-ratio="0.5"
+         style="background-image: url({% static 'images/big_image_1.jpg' %});">
+    <div class="container">
+        <div class="row align-items-center site-hero-inner justify-content-center">
+            <div class="col-md-8 text-center">
+
+                <div class="mb-5 element-animate">
+                    <img src="{% static 'images/banner_text.png' %}" alt="Image placeholder" class="img-md-fluid">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END section -->
+
+<section class="quick-info element-animate" data-animate-effect="fadeInLeft">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 bgcolor">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="media">
+                            <div class="mr-3 icon-wrap"><span class="icon ion-ios-telephone"></span></div>
+                            <div class="media-body">
+                                <h5>+375298014777</h5>
+                                <p>Звоните 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="media">
+                            <div class="mr-3 icon-wrap"><span class="icon ion-location"></span></div>
+                            <div class="media-body">
+                                <h5>ул. Якуба Коласа 28</h5>
+                                <p>Минск,<br> ст. метро Академия Наук</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="media">
+                            <div class="mr-3 icon-wrap"><span class="icon ion-android-time"></span></div>
+                            <div class="media-body">
+                                <h5>Ежедневно: 8:00 - 22:00</h5>
+                                <p>Пн-Вс</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END section -->
+
+
+<section class="site-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-7 text-center">
+                <h2>Наши Фишки</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+
+                <div class="media d-block media-feature text-center">
+                    <div class="mr-3 icon-wrap"><span class="custom-icon flaticon-scissors-1"></span></div>
+                    <div class="media-body">
+                        <h3>Бритье &amp; Стрижка</h3>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="media d-block media-feature text-center">
+                    <div class="mr-3 icon-wrap"><span class="custom-icon flaticon-cream"></span></div>
+                    <div class="media-body">
+                        <h3>Мытье Головы</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="media d-block media-feature text-center">
+                    <div class="mr-3 icon-wrap"><span class="custom-icon flaticon-moustache"></span></div>
+                    <div class="media-body">
+                        <h3>Эксперты в Усах</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+
+                <div class="media d-block media-feature text-center">
+                    <div class="mr-3 icon-wrap"><span class="custom-icon flaticon-scissors"></span></div>
+                    <div class="media-body">
+                        <h3>Стильные Прически</h3>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="media d-block media-feature text-center">
+                    <div class="mr-3 icon-wrap"><span class="custom-icon flaticon-razor"></span></div>
+                    <div class="media-body">
+                        <h3>Бритва Для Бороды</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="media d-block media-feature text-center">
+                    <div class="mr-3 icon-wrap"><span class="custom-icon flaticon-hair-comb"></span></div>
+                    <div class="media-body">
+                        <h3>Укладка</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END section -->
+
+<section class="section-cover cta" data-stellar-background-ratio="0.5"
+         style="background-image: url({% static 'images/big_image_2.jpg' %});">
+    <div class="container">
+        <div class="row justify-content-center align-items-center intro">
+            <div class="col-md-8 text-center element-animate">
+                <h2 class="mb-4"><span>Запишись на стрижку уже сейчас</span></h2>
+                <p><a href="#" class="btn btn-black">Оформить Запись</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END section -->
+
+<section class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 video-wrap mb-5">
+                <img src="{% static 'images/drob.jpg' %}" alt="Image placeholder" class="img-fluid">
+            </div>
+            <div class="col-md-6 pl-md-5">
+                <h3>О НАС</h3>
+                <p class="lead">Присоединяйся к нам сегодня</p>
+                <p>Alex Barbershop — это место, где каждый мужчина может приятно провести свободное время:
+                    Подстричься, побриться, выпить напитки, отвлечься от рутины, пообщаться с интересными людьми,
+                    обсудить последние новости, актуальные темы.
+                    Alex Barbershop — первый Барбершоп, открывшийся на территории первого общежития БГУИР.</p>
+                <p>
+
+                    Alex Barbershop подарит вам незабываемые минуты приятного времяпровождения и позволит
+                    отвлечься от офисной и общажной суеты.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END section -->
+
+
+<footer class="site-footer">
+    <div class="row justify-content-center">
+        <div class="col-md-7 text-center">
+            Оформление и Разработка Александа Дягеля &copy;<script>document.write(new Date().getFullYear());</script>
+            Все права защищены
+        </div>
+    </div>
+</footer>
+<!-- END footer -->
+
+<!-- loader -->
+<div id="loader" class="show fullscreen">
+    <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#f4b214"/>
+    </svg>
+</div>
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'js/jquery-migrate-3.0.0.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/magnific-popup-options.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
