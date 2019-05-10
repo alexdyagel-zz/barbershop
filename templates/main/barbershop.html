@@ -35,7 +35,7 @@
             <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
                 <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="">Онлайн-запись</a>
+                        <a class="nav-link" href="{% url 'main:order1' %}">Онлайн-запись</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'main:logout' %}">Выход</a>
@@ -55,7 +55,7 @@
             <div class="col-md-8 text-center">
 
                 <div class="mb-5 element-animate">
-                    <img src="{% static 'images/banner_text.png' %}" alt="Image placeholder" class="img-md-fluid">
+                    <img src="{% static 'images/gavnoshrift.png' %}" alt="Image placeholder" class="img-md-fluid">
                 </div>
 
             </div>
@@ -178,7 +178,7 @@
         <div class="row justify-content-center align-items-center intro">
             <div class="col-md-8 text-center element-animate">
                 <h2 class="mb-4"><span>Запишись на стрижку уже сейчас</span></h2>
-                <p><a href="#" class="btn btn-black">Оформить Запись</a></p>
+                <p><a href="{% url 'main:order1' %}" class="btn btn-black">Оформить Запись</a></p>
             </div>
         </div>
     </div>
