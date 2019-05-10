@@ -42,11 +42,8 @@ def step1(request):
             service = form.cleaned_data['service']
             specialist = form.cleaned_data['specialist']
             seances = Seance.objects.filter(specialist=specialist).order_by('date')
-            print(type(seances))
             request.session['service'] = serializers.serialize('json', [service])
             request.session['seances'] = serializers.serialize('json', seances)
-            print(request.session['seances'])
-            print(request.session['service'])
             return redirect('main:order2')
     else:
         form = FirstStepOrder()
@@ -72,23 +69,17 @@ def step2(request):
 def step3(request):
     des_seances = serializers.deserialize("json", request.session['seances'])
     seances = [seance.object for seance in des_seances]
-    print(seances)
     if request.method == 'POST':
         form = ThirdStepOrder(request.POST, seances=seances)
         if form.is_valid():
             time = form.cleaned_data['time']
-            print(time)
             seances_ids = [seance.id for seance in seances]
-            print(seances_ids)
             seance = Seance.objects.get(time=time, id__in=seances_ids)
-            print(seance)
             service = list(serializers.deserialize("json", request.session['service']))[0].object
-            print(service)
             order = Order(seance=seance, service=service, user=request.user)
             order.save()
             return redirect('main:home')
     else:
-        print(seances)
         form = ThirdStepOrder(seances=seances)
     return render(request, 'main/order3.html', {'form': form})
 

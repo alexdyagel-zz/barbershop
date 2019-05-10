@@ -1,12 +1,13 @@
-{% extends 'main/base.html' %}
+{% extends 'main/order_wrapper.html' %}
+{% load widget_tweaks %}
 
-{% block title %}Order{% endblock %}
-
-{% load i18n %}
-{% block content %}
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="{% trans "submit" %}"/>
-    </form>
+{% block step %}
+    <label for="id_specialist">Выберите специалиста</label>
+    <br>
+    {% render_field form.specialist class="form-control" %}
+    <br>
+    <label for="id_specialist">Выберите услугу</label>
+    <br>
+    {% render_field form.service class="form-control" %}
+    <br>
 {% endblock %}

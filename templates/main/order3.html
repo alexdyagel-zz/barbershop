@@ -1,12 +1,9 @@
-{% extends 'main/base.html' %}
+{% extends 'main/order_wrapper.html' %}
+{% load widget_tweaks %}
 
-{% block title %}Order{% endblock %}
-
-{% load i18n %}
-{% block content %}
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="{% trans "submit" %}"/>
-    </form>
+{% block step %}
+    <label for="id_specialist">Выберите время</label>
+    <br>
+    {% render_field form.time class="form-control" placeholder="Выберите время" %}
+    <br>
 {% endblock %}
